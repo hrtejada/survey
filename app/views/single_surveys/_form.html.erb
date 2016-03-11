@@ -1,0 +1,22 @@
+<%= simple_form_for(@single_survey) do |f| %>
+  <%= f.error_notification %>
+
+<div class="container">
+<div class="row">
+  <div class="form-inputs col-md-3">
+    <%= f.input :name %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-inputs col-md-3">
+    <%= f.fields_for :questions do |builder| %>
+      <%= render 'question_fields', :f => builder %>
+      <br />
+    <% end %>
+    <%= f.button :submit %>
+  </div>
+</div>
+
+<% end %>
+</div>

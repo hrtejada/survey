@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @single_survey.name %>
+</p>
+<ol>
+  <% for question in @single_survey.questions %>
+  <li><%= h question.content %></li>
+  <ul>
+    <% for answer in question.answers %>
+      <li><%= h answer.content %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</ol>
+
+
+<%= link_to 'Edit', edit_single_survey_path(@single_survey) %> |
+<%= link_to 'Back', single_surveys_path %>

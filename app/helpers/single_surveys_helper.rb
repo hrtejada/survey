@@ -1,0 +1,2 @@
+module SingleSurveysHelper
+end
