@@ -3,21 +3,20 @@
 <div class="container">
 <h1>Listing Surveys</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @single_surveys.each do |single_survey| %>
       <tr>
         <td><%= single_survey.name %></td>
-        <td><%= link_to 'Show', single_survey %></td>
-        <td><%= link_to 'Edit', edit_single_survey_path(single_survey) %></td>
-        <td><%= link_to 'Destroy', single_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', single_survey, :class => "btn btn-success", method: :get%></td>
+        <td><%= button_to 'Edit', edit_single_survey_path(single_survey), :class => "btn btn-warning", method: :get%></td>
+        <td><%= button_to 'Delete', single_survey, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"%></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,7 +26,7 @@
 
 <p>Click on link below to add a new survey.<p>
 
-<%= link_to 'New Survey', new_single_survey_path %>
+<%= button_to 'New Survey', new_single_survey_path, :class => "btn btn-primary", method: :get%>
 
 
 </div>
